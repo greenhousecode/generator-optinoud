@@ -1,0 +1,30 @@
+{
+  "name": "generator-optinoud",
+  "version": "1.0.0",
+  "description": "Optinoud lets you write ES6+ and SASS snippets, while transpiling to ES5+CSS, and live injecting it into a specified website.",
+  "files": [
+    "app"
+  ],
+  "main": "app/index.js",
+  "scripts": {
+    "lint": "eslint *.js app/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenhouseGroupBV/meh-generator-optinoud.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Rick Stevens <rick.stevens@greenhousegroup.com> (https://www.greenhousegroup.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreenhouseGroupBV/meh-generator-optinoud/issues"
+  },
+  "homepage": "https://www.npmjs.com/package/generator-optinoud",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
+}

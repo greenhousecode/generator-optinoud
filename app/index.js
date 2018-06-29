@@ -19,13 +19,8 @@ module.exports = class extends Generator {
     });
   }
 
-  copyHiddenfiles() {
-    const hiddenFiles = ['.gitignore'];
-    hiddenFiles.forEach(hiddenFile => this.fs.copyTpl(this.templatePath(hiddenFile),
-      this.destinationPath(hiddenFile), this.props));
-  }
-
   writing() {
+    this.fs.write(this.destinationPath('.gitignore'), 'node_modules\n');
     this.fs.copyTpl(this.templatePath('.'), this.destinationPath('.'), this.props);
   }
 

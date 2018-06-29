@@ -1,34 +1,18 @@
-# Optinoud Yeoman generator
-
-Generate an Optinoud instance wherever you like.
+# Optinoud
 
 Optinoud lets you write ES6+ and SASS snippets, while transpiling to ES5+CSS, and live injecting it into a specified website.
 
-## Prerequisites
+## (Only when not installed through the Optinoud Yeoman generator)
 
-You need to have Optinoud globally installed. Run once:
-
-```shell
-npm install -g generator-optinoud
-```
-
-## How to generate
-
-Open a Terminal window and navigate to the folder where you want to generate an Optinoud setup:
+Manually intialize the packages in the currect directory once by running:
 
 ```shell
-cd /path/to/folder
-```
-
-Then initiate Optinoud through `npx`, and follow the steps:
-
-```shell
-npx yo optinoud
+npm install
 ```
 
 ## Using Optinoud
 
-In your project directory, just run:
+Just run:
 
 ```shell
 npm start

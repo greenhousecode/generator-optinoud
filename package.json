@@ -1,13 +1,13 @@
 {
   "name": "generator-optinoud",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "Optinoud lets you write ES6+ and SASS snippets, while transpiling to ES5+CSS, and live injecting it into a specified website.",
   "files": [
     "app"
   ],
   "main": "app/index.js",
   "scripts": {
-    "lint": "eslint *.js app/*.js"
+    "lint": "npx eslint *.js app/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,10 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "yeoman-generator": "^2.0.5",
+    "yosay": "^2.0.2"
   }
 }

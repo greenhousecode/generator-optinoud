@@ -12,8 +12,9 @@ module.exports = class extends Generator {
 
     return this.prompt([{
       name: 'website',
-      message: 'What is the website you want to run your code on?',
-      default: 'https://www.example.com/',
+      message: 'What is the website URL you want to run your code on?',
+      validate: answer => (answer && /^https?:\/\/[^.]+\.[^.]+/.test(answer))
+        || `Please enter a valid URL, e.g. ${chalk.green('https://www.example.com/optional/page.html')}`,
     }]).then((answers) => {
       this.props = answers;
     });

@@ -21,7 +21,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.write(this.destinationPath('.gitignore'), 'node_modules\n');
+    this.fs.write(this.destinationPath('.gitignore'), 'node_modules\ndist\n');
     this.fs.copyTpl(this.templatePath('.'), this.destinationPath('.'), this.props);
   }
 

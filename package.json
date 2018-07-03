@@ -1,6 +1,6 @@
 {
   "name": "generator-optinoud",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "Optinoud lets you write ES6+ and SASS snippets, while transpiling to ES5+CSS, and live injecting it into a specified website.",
   "files": [
     "app"

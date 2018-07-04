@@ -12,13 +12,13 @@ npm install
 
 ## Using Optinoud
 
-Just run:
+In your project directory, just run:
 
 ```shell
 npm start
 ```
 
-By default, it will load `/src/default.js`, transpile it to ES5, and inject it into the specified `website` in `/config.json`.
+By default, it will load `/src/default.js`, transpile it to ES5, and inject it into the website specified while installing Optinoud.
 
 You can load alternative scripts by using the `optinoud` URL parameter. E.g: `?optinoud=example` will load `/src/example.js`.
 

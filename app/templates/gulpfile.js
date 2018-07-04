@@ -9,9 +9,8 @@ const replace = require('gulp-replace');
 const cleanCss = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const prependFile = require('prepend-file');
-const config = require('./config');
 
-let variant = config.defaultVariant;
+let variant = 'default';
 
 const getVariantFromUrl = (url) => {
   const matches = url.match(/optinoud=([^#&]+)/);
@@ -19,7 +18,7 @@ const getVariantFromUrl = (url) => {
   if (matches && matches[1]) {
     return fs.existsSync(`src/${matches[1]}.js`)
       ? matches[1]
-      : config.defaultVariant;
+      : 'default';
   }
 
   return variant;
@@ -64,7 +63,7 @@ gulp.task('browser-sync', (done) => {
 
   browserSync.init({
     proxy: {
-      target: config.website,
+      target: '<%= website %>',
       middleware: (req, res, next) => {
         variant = getVariantFromUrl(req.url);
         next();
@@ -73,7 +72,7 @@ gulp.task('browser-sync', (done) => {
     serveStatic: ['dist'],
     rewriteRules: [{
       match: '</body>',
-      replace: `<script src="/${variant}.js"></script></body>`,
+      fn: () => `<script src="/${variant}.js"></script></body>`,
     }],
   }, done);
 });

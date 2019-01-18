@@ -1,6 +1,6 @@
 {
   "name": "generator-optinoud",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Optinoud lets you write ES6+ and SASS snippets, while transpiling to ES5+CSS, and live injecting it into a specified website.",
   "files": [
     "app"
@@ -23,13 +23,13 @@
   },
   "homepage": "https://www.npmjs.com/package/generator-optinoud",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0"
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "yeoman-generator": "^2.0.5",
+    "yeoman-generator": "^3.2.0",
     "yosay": "^2.0.2"
   }
 }

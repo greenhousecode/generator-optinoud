@@ -21,7 +21,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    this.fs.write(this.destinationPath('.gitignore'), 'node_modules\ndist\n');
+    this.fs.write(this.destinationPath('.gitignore'), 'node_modules\n');
     this.fs.copyTpl(this.templatePath('.'), this.destinationPath('.'), this.props);
   }
 
@@ -31,6 +31,6 @@ module.exports = class extends Generator {
 
   end() {
     this.spawnCommandSync('clear');
-    this.log(yosay(`${chalk.blue('Optinoud')} has finished installing.\n\nRun ${chalk.green('npm start')} and edit ${chalk.white('src/default.js')} to get started!`));
+    this.log(yosay(`${chalk.blue('Optinoud')} has finished installing.\n\nRun ${chalk.green('npm start')} and edit ${chalk.white('src/variant.js')} to get started!`));
   }
 };

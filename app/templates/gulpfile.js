@@ -10,7 +10,7 @@ const cleanCss = require('gulp-clean-css');
 const browserSync = require('browser-sync');
 const prependFile = require('prepend-file');
 
-let variant = 'default';
+let variant = 'variant';
 
 const getVariantFromUrl = (url) => {
   const matches = url.match(/optinoud=([^#&]+)/);
@@ -18,11 +18,15 @@ const getVariantFromUrl = (url) => {
   if (matches && matches[1]) {
     return fs.existsSync(`src/${matches[1]}.js`)
       ? matches[1]
-      : 'default';
+      : 'variant';
   }
 
   return variant;
 };
+
+gulp.task('img', () => gulp
+  .src('src/*.{png,gif,jpg}')
+  .pipe(gulp.dest('dist')));
 
 gulp.task('js', () => gulp
   .src('src/*.js')
@@ -77,6 +81,6 @@ gulp.task('browser-sync', (done) => {
   }, done);
 });
 
-gulp.task('build', gulp.series('js', 'sass'));
+gulp.task('build', gulp.series('img', 'js', 'sass'));
 gulp.task('watch', () => gulp.watch('src/*', gulp.series('build', 'reload')));
 gulp.task('default', gulp.series('build', 'browser-sync', 'watch'));

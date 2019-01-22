@@ -26,7 +26,7 @@ In your project directory, just run:
 npm start
 ```
 
-By default, it will load `/src/variant.js`, transpile it to ES5, and inject it into the website specified while installing Optinoud.
+By default, it will load `/src/variant.js`, transpile it to ES5, and inject it into the website specified while running Optinoud.
 
 You can load alternative scripts by using the `optinoud` URL parameter. E.g: `?optinoud=example` will load `/src/example.js`.
 

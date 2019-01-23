@@ -33,3 +33,7 @@ You can load alternative scripts by using the `optinoud` URL parameter. E.g: `?o
 ### Adding SASS
 
 To add static CSS, create a `.scss` file with the same filename as the `.js` file in `/src`. The SASS file will get transpiled to CSS, and inserted into the `.js` file in `/dist`.
+
+### Adding images
+
+To add images, just drop them in the `/src` folder. These will now be relatively accessible through the URL, i.e. `/example.jpg`.

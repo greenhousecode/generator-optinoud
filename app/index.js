@@ -1,6 +1,7 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
+const { version } = require('../package.json');
 
 module.exports = class extends Generator {
   initializing() {
@@ -8,7 +9,7 @@ module.exports = class extends Generator {
   }
 
   prompting() {
-    this.log(yosay(`Welcome to the\n${chalk.blue('Optinoud')} generator!`));
+    this.log(yosay(`Welcome to the\n${chalk.blue('Optinoud')} generator!\n${chalk.gray(`v${version}`)}`));
 
     return this.prompt([{
       name: 'website',

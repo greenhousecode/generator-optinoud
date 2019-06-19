@@ -30,7 +30,7 @@ gulp.task('img', () => gulp
 
 gulp.task('js', () => gulp
   .src('src/*.js')
-  .pipe(babel({ presets: [['env', { targets: { browsers: ['>1%'] } }]] }))
+  .pipe(babel({ presets: [['@babel/env', { targets: { browsers: ['>1%'] } }]] }))
   .pipe(uglify({ mangle: { toplevel: true } }))
   .pipe(replace('"use strict";', ''))
   .pipe(insert.prepend('(function(){'))

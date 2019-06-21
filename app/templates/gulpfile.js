@@ -1,8 +1,9 @@
-const fs = require('fs');
 const gulp = require('gulp');
 const fn = require('gulp-fn');
+const { sep } = require('path');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const { existsSync } = require('fs');
 const insert = require('gulp-insert');
 const uglify = require('gulp-uglify');
 const replace = require('gulp-replace');
@@ -16,7 +17,7 @@ const getVariantFromUrl = (url) => {
   const matches = url.match(/optinoud=([^#&]+)/);
 
   if (matches && matches[1]) {
-    return fs.existsSync(`src/${matches[1]}.js`)
+    return existsSync(`src/${matches[1]}.js`)
       ? matches[1]
       : 'variant';
   }
@@ -43,8 +44,7 @@ gulp.task('sass', () => gulp
   .pipe(cleanCss())
   .pipe(fn((file) => {
     const jsFilePath = file.path
-      .replace('/src', '/dist')
-      .replace('\\src', '\\dist')
+      .replace(`${sep}src`, `${sep}dist`)
       .replace('.css', '.js');
 
     const css = file.contents
@@ -62,7 +62,7 @@ gulp.task('reload', (done) => {
 });
 
 gulp.task('browser-sync', (done) => {
-  if (!fs.existsSync(`src/${variant}.js`)) {
+  if (!existsSync(`src/${variant}.js`)) {
     throw new Error(`"src/${variant}.js" doesn't exist!`);
   }
 

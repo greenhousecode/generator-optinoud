@@ -44,6 +44,7 @@ gulp.task('sass', () => gulp
   .pipe(fn((file) => {
     const jsFilePath = file.path
       .replace('/src', '/dist')
+      .replace('\\src', '\\dist')
       .replace('.css', '.js');
 
     const css = file.contents
